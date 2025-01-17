@@ -1,0 +1,214 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(145deg, #0d1117, #161b22);
+    color: #c9d1d9;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #161b22;
+    color: #c9d1d9;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar .toggle-btn {
+    background: #21262d;
+    color: #58a6ff;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar .toggle-btn:hover {
+    background: #30363d;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar ul li:hover {
+    background: #21262d;
+}
+
+.sidebar ul li .icon {
+    font-size: 1.5rem;
+    color: #58a6ff;
+}
+
+.sidebar ul li .menu-text {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed ul li .menu-text {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar ul li:last-child {
+    margin-top: auto;
+    background: #21262d;
+}
+
+.sidebar ul li:last-child:hover {
+    background: #30363d;
+}
+
+/* Content Area */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed + .content {
+    margin-left: 80px;
+}
+
+/* Section Styling */
+section {
+    background: #161b22;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 15px 0;
+    width: 80%;
+    max-width: 900px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+
+/* Section Headings */
+section h3 {
+    color: #58a6ff;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #58a6ff;
+    padding-bottom: 5px;
+}
+
+/* Forms and Inputs */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    color: #8b949e;
+    font-weight: bold;
+}
+
+input, textarea, button {
+    background: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+input:focus, textarea:focus, button:hover {
+    outline: none;
+    border-color: #58a6ff;
+    box-shadow: 0 0 10px #58a6ff;
+}
+
+button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: #58a6ff;
+    color: #0d1117;
+}
+
+/* Plan Tiles */
+.plan-tile {
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(88, 166, 255, 0.4);
+}
+
+.plan-tile h3 {
+    color: #8b949e;
+    margin-bottom: 10px;
+}
+
+.plan-tile p {
+    color: #c9d1d9;
+}
+
+/* Notifications Section */
+#notifications p, #riskManagement p, #complianceTracking p {
+    font-size: 1.1rem;
+    color: #8b949e;
+}
+
+/* Futuristic Glow */
+section h3, .plan-tile:hover h3 {
+    text-shadow: 0 0 10px #58a6ff, 0 0 20px #58a6ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        width: 95%;
+    }
+}
